@@ -83,7 +83,7 @@ function faviconApp(req, res) {
         return returnError(blockStatusCode || 403, res, blockReason);
     }
     const domain = req.url.substr(1).toLowerCase();
-    if (domain.match(/[\/:?]|(\.\.)/)) {
+    if (domain.match(/[\/?]|(\.\.)/)) {
         return returnError(404, res, 'Usage: GET /domain.com');
     }
     if (domain.indexOf('keeweb.info') >= 0) {
